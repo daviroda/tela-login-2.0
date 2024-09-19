@@ -1,0 +1,211 @@
+@charset "UTF-8";
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    box-sizing: border-box;
+} 
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #058ED9;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+  flex: 1 1 auto;
+}
+
+section#cadastro {
+    margin-top: 50px;
+    border-radius: 5px;
+    width: 600px;
+    background-color: white;
+}
+
+section#cadastro div#img2 {
+    background: url('../imagens/backgroundcadastro.jpg');
+    background-position: center left;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    height: 250px;
+    width: 600px;
+}
+
+section#cadastro h1, p {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+div.email {
+    margin-bottom: 10px;
+}
+
+form input[type=email] {
+    width: 85%;
+    margin-left: 20px;
+    background-color: rgb(191, 231, 233);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+form input[type=password] {
+    width: 85%;
+    margin-left: 20px;
+    background-color: rgb(191, 231, 233);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+div.senha {
+    margin-bottom: 10px;
+}
+
+form input[type=submit] {
+    background-color: rgb(191, 231, 233);
+    width: 84%;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+form input:hover {
+    background-color: white;
+}
+
+input {
+    padding: 5px;
+}
+
+span {
+  margin-left: 10px;
+}
+
+/*TABLET*/
+
+@media screen and (max-width: 800px) {
+     main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    #cadastro {
+      max-width: 500px;
+    }
+}
+
+/*CELULAR*/
+
+@media screen and (max-width: 500px) {
+    main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    #cadastro {
+      min-width: 250px;
+      max-width: 400px;
+    }
+
+    form input[type=email] {
+      width: 90%;
+      margin-right: 20px;
+  }
+  
+  form input[type=password] {
+      width: 90%;
+      margin-right: 20px;
+  }
+
+    form input[type=submit] {
+      width: 90%;
+  }
+}
+
+
+/* Style para criar fundo animado com bolinhas */
+
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* para que as bolinhas não interfiram com o conteúdo */
+    z-index: -1; /* colocando as bolinhas atrás do conteúdo */
+  }
+
+  .ball {
+    position: absolute;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #3498db; /* cor inicial da bolinha */
+    animation: move 5s infinite; /* animação de movimento */
+    pointer-events: none; /* para que as bolinhas não interfiram com o conteúdo */
+  }
+
+  /* Define a animação de movimento */
+  @keyframes move {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(300px, 300px); /* direção e distância do movimento */
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  /* Cada bolinha terá um tamanho e cor diferente */
+  .ball:nth-child(1) {
+    width: 15px;
+    height: 15px;
+    background-color: #e74c3c; /* cor diferente */
+    animation-duration: 6s; /* duração diferente */
+  }
+
+  .ball:nth-child(2) {
+    width: 25px;
+    height: 25px;
+    background-color: #2ecc71; /* outra cor diferente */
+    animation-duration: 4s; /* outra duração */
+  }
+
+  /* Estilos para o conteúdo principal */
+  .content {
+    position: relative;
+    z-index: 1; /* coloca o conteúdo sobre as bolinhas */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* fundo branco semi-transparente */
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* sombra suave */
+  }
+
+  /* Estilo para o título */
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  /* Estilo para o texto */
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+  }

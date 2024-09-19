@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar conta</title>
+    <link rel="stylesheet" href="estilos/cadastro.css">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <main>
+        <section id="cadastro">
+          <div id="img2">
+            <!--Aqui vai a imagem nas CSS-->
+        </div>
+             <h1>Olá, Seja bem vindo</h1> 
+             <p>Crie uma conta e acesse seu ambiente</p><!--ARRUMAR IMAGEM E H1-->
+            <form action="extra/cadastro.php" method="post" autocomplete="on">
+                <div id="formulario2">
+                    <div class="email">
+                        <label for="iemail2"><span class="material-symbols-outlined">
+                            account_circle
+                            </span></label>
+                        <input type="email" name="email" id="iemail2" placeholder="Seu e-mail" maxlength="30" autocomplete="email" required>
+                    </div>
+                    <div class="senha">
+                        <label for="isenha2"><span class="material-symbols-outlined">
+                            key
+                            </span></label>
+                        <input type="password" name="senha" id="isenha2" placeholder="Sua senha" maxlength="20" minlength="8" autocomplete="current-password" required>
+                    </div>
+                    <div class="cadastrar">
+                        <input type="submit" value="Cadastrar">
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+      <!-- Container para as bolinhas -->
+      <div class="container">
+        <!-- Bolinhas são criadas dinamicamente com JavaScript -->
+      </div>
+    
+      <!-- JavaScript para criar bolinhas -->
+      <script>
+        // Número de bolinhas a serem criadas
+        const numBalls = 150;
+    
+        // Container onde as bolinhas serão adicionadas
+        const container = document.querySelector('.container');
+    
+        // Loop para criar as bolinhas
+        for (let i = 0; i < numBalls; i++) {
+          const ball = document.createElement('div');
+          ball.classList.add('ball');
+          container.appendChild(ball);
+          
+          // Define posições aleatórias iniciais para cada bolinha
+          const size = Math.random() * 30 + 10; // Tamanho aleatório entre 10 e 40 pixels
+          ball.style.width = `${size}px`;
+          ball.style.height = `${size}px`;
+          ball.style.backgroundColor = getRandomColor();
+          ball.style.left = `${Math.random() * 100}%`;
+          ball.style.top = `${Math.random() * 100}%`;
+          ball.style.animationDuration = `${Math.random() * 6 + 2}s`; // Duração aleatória entre 2 e 8 segundos
+        }
+    
+        // Função para gerar cores aleatórias em formato hexadecimal
+        function getRandomColor() {
+          const letters = '0123456789ABCDEF';
+          let color = '#';
+          for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+          }
+          return color;
+        }
+      </script>
+</body>
+</html>

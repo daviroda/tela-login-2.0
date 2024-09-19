@@ -1,0 +1,11 @@
+/*TABLET / PC MÉDIO*/
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login {
+    min-width: 300px;
+    max-width: 600px 
+}
